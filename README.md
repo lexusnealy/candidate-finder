@@ -30,4 +30,7 @@ git clone https://github.com/yourusername/candidate-finder.git
 
 ## How to reach me: 
 Email: len@gmail.com
-Github: [lexusnealy](https://candidate-finder-spkc.onrender.com)
+GitHub: [lexusnealy](https://github.com/lexusnealy)  
+Deployed Site: [https://candidate-finder-spkc.onrender.com](https://candidate-finder-spkc.onrender.com)
+
+
