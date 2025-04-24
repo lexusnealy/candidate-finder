@@ -1,10 +1,22 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Root Variables and Global Styles */
 :root {
   font-family: 'Inter Tight', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+  /* Dark Theme Colors */
+  --background-color: #121212;
+  --foreground-color: #e0e0e0;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --border-color: #333;
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+  --hover-color: #1f1f1f;
+
+  /* Color Scheme and Rendering */
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   font-synthesis: none;
@@ -13,16 +25,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Apply rounded corners globally */
+* {
+  border-radius: 8px;
+}
+
+/* Anchor Tag Styles */
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
+/* Body Styles */
 body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  margin: 0;
+  padding: 0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(
     180deg,
     rgb(32, 44, 136) 0%,
@@ -30,8 +58,8 @@ body {
     rgba(0, 2, 18, 1) 100%
   );
   background-size: cover;
-  background-repeat: no-repeat no-repeat;
-  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
   place-items: center;
   min-width: 320px;
@@ -44,9 +72,11 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 50%; /* Makes the button circular */
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  width: 50px; /* Set equal width and height */
+  height: 50px;
+  padding: 0; /* Remove padding to maintain the circular shape */
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -60,6 +90,18 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Red button */
+button.red {
+  background-color: red;
+  color: white;
+}
+
+/* Green button */
+button.green {
+  background-color: green;
+  color: white;
 }
 
 @media (prefers-color-scheme: light) {
@@ -117,4 +159,237 @@ tbody tr:nth-child(odd) {
 .table {
   width: 80vw;
   table-layout: fixed;
+}
+
+/* Saved Candidates Page Container */
+.saved-candidates-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Individual Candidate Box */
+.saved-candidate-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: var(--hover-color);
+  box-shadow: 0 4px 6px var(--box-shadow-color);
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+/* Candidate Image */
+.saved-candidate-box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 2px solid var(--primary-color);
+}
+
+/* Candidate Details */
+.saved-candidate-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  word-wrap: break-word;
+}
+
+.saved-candidate-details p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--foreground-color);
+}
+
+.saved-candidate-details a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.saved-candidate-details a:hover {
+  text-decoration: underline;
+}
+
+/* Remove Button */
+.remove-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  width: 50px; /* Set equal width and height for a circular shape */
+  height: 50px;
+  background-color: #b00020;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Makes the button circular */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #cf6679;
+}
+
+.remove-button span {
+  display: none; /* Hide the "Remove" text by default */
+}
+
+.remove-button:hover span {
+  display: inline; /* Show the "Remove" text on hover */
+  margin-left: 8px; /* Add spacing between the "X" and "Remove" */
+}
+
+/* Candidate Search Container */
+.candidate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: var(--hover-color); /* Dark background for the box */
+  box-shadow: 0 4px 6px var(--box-shadow-color); /* Subtle shadow for depth */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  word-wrap: break-word;
+  margin: 16px auto;
+}
+
+/* Candidate Image */
+.candidate-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 2px solid var(--primary-color); /* Highlighted border */
+}
+
+/* Candidate Details */
+.candidate-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--foreground-color); /* Light text color */
+}
+
+.candidate-details p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--foreground-color);
+}
+
+.candidate-details a {
+  color: var(--primary-color); /* Highlighted links */
+  text-decoration: none;
+}
+
+.candidate-details a:hover {
+  text-decoration: underline;
+}
+
+/* Button Group */
+.candidate-container .button-group {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 16px; /* Add spacing between the buttons */
+  margin-top: 16px; /* Add spacing above the button group */
+}
+
+/* Buttons */
+.candidate-container button {
+  width: 60px; 
+  height: 60px;
+  border: none; 
+  border-radius: 60%; 
+  font-size: 16px; 
+  font-weight: bold; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text inside the button */
+}
+
+/* Green Button (Save) */
+.candidate-container .green-button {
+  background-color: #03dac6; /* Green color */
+  color: #000; /* Dark text for contrast */
+}
+
+.candidate-container .green-button:hover {
+  background-color: #018786; /* Darker green on hover */
+}
+
+/* Red Button (Next) */
+.candidate-container .red-button {
+  background-color: #b00020; /* Red color */
+  color: #fff; /* White text for contrast */
+}
+
+.candidate-container .red-button:hover {
+  background-color: #cf6679; /* Lighter red on hover */
+}
+
+.candidate-container button:hover {
+  background-color: var(--secondary-color); /* Change color on hover for emphasis */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.candidate-container button:focus {
+  outline: 2px solid var(--primary-color); /* Add focus outline for accessibility */
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.search-box input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  width: 200px;
+  background-color: var(--hover-color);
+  color: var(--foreground-color);
+}
+
+.search-box input::placeholder {
+  color: var(--foreground-color);
+  opacity: 0.7;
+}
+
+.search-box .search-button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box .search-button:hover {
+  background-color: var(--secondary-color);
 }
