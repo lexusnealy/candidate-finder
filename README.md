@@ -1,33 +1,33 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🕵️‍♂️ candidate-finder
+candidate finder is a full-stack web application designed to help recruiters and hiring teams efficiently search for and manage potential candidates. Built with modern web technologies, it offers seamless data querying, filtering, and profile viewing capabilities — making the hiring process faster and smarter.
 
-Currently, two official plugins are available:
+## Files and Directories
+.env: Contains environment variables for database connection.
+.gitignore: Specifies files and directories to be ignored by Git.
+database/: Contains SQL scripts for database schema and seed data.
+schema.sql: Defines the database schema.
+seeds.sql: Inserts initial data into the database.
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## LICENSE: The project's license file.
+package.json: Contains project metadata and dependencies.
+README.md: This file, which provides detailed information about the project.
+src/: Contains the source code of the application.
+connections.ts: Handles database connection.
+server.ts: Contains the main application logic.
+tsconfig.json: TypeScript configuration file.
 
-## Expanding the ESLint configuration
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+You have installed Node.js and npm.
+You have installed MondoDB.
+You have Git.
+## Installation
+Clone the repository:
+git clone https://github.com/yourusername/candidate-finder.git
+   cd candidate-finder
 
-* Configure the top-level `parserOptions` property as follows:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## How to reach me: 
+Email: len@gmail.com
+Github: [lexusnealy](https://candidate-finder-spkc.onrender.com)
